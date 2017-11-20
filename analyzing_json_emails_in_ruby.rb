@@ -45,8 +45,8 @@ freq_of_email_senders  = email_addresses_hash.sort_by {|actual_email_address, am
     end
     email_index_for_subject_lines += 1
   end
-most_of_our_words_and_how_often_used = dictionary_of_words_from_subject_lines.select {|actual_word, freq_of_word| freq_of_word > 10}.sort_by { |actual_word, freq_of_word| freq_of_word }
-# to see the most common words used in subject lines (of at least 10 times used) uncomment the line below
+most_of_our_words_and_how_often_used = dictionary_of_words_from_subject_lines.select {|actual_word, freq_of_word| freq_of_word > 5}.sort_by { |actual_word, freq_of_word| freq_of_word }
+# to see the most common words used in subject lines (of at least 5 times used) uncomment the line below
 # print dictionary_of_words_from_subject_lines.select {|actual_word, freq_of_word| freq_of_word > 10}.sort_by { |actual_word, freq_of_word| freq_of_word }
 
 
@@ -150,10 +150,23 @@ time_blocks_sorted_by_frequency = time_hour_hash.sort_by {|time, quant| quant}
 
 # array of integers
   all_of_our_times_in_seconds
+  # File.open("time_of_emails_sent_in_seconds.txt", "w+") do |f|
+  #   all_of_our_times_in_seconds.each { |element| f.puts(element) }
+  # end
+
 # array of key value pairs: ["4PM", 267], maybe put this in json?
+# i guess it already is, i pasted my 24 key value pairs, i put it in https://jsonlint.com/, says its valid json
+# i just copied that and pasted it in a json file in our directory
   time_blocks_sorted_by_frequency
+
 # check that no personal emails get published
 # array of key value pairs: ["@gmail.com", 488], maybe put this in json?
+# i put it in https://jsonlint.com/, says its valid json
+# i just copied that and pasted it in a json file in our directory
   freq_of_email_senders
+
 # array of key value pairs: ["job", 163], maybe put this in json?
-  most_of_our_words_and_how_often_used
+# i put it in https://jsonlint.com/, says its valid json
+# i just copied that and pasted it in a json file in our directory
+   most_of_our_words_and_how_often_used
+
