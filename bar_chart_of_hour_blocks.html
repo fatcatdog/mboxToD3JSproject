@@ -1,0 +1,47 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="//d3plus.org/js/d3.js"></script>
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<div id="viz"></div>
+
+<script>
+  var data = [
+    {Hour: 0, Frequency: 121},
+    {Hour: 1, Frequency: 126},
+    {Hour: 2, Frequency: 83},
+    {Hour: 3, Frequency: 68},
+    {Hour: 4, Frequency: 44},
+    {Hour: 5, Frequency: 79},
+    {Hour: 6, Frequency: 101},
+    {Hour: 7, Frequency: 75},
+    {Hour: 8, Frequency: 136},
+    {Hour: 9, Frequency: 158},
+    {Hour: 10, Frequency: 120},
+    {Hour: 11, Frequency: 151},
+    {Hour: 12, Frequency: 154},
+    {Hour: 13, Frequency: 290},
+    {Hour: 14, Frequency: 222},
+    {Hour: 15, Frequency: 270},
+    {Hour: 16, Frequency: 267},
+    {Hour: 17, Frequency: 253},
+    {Hour: 18, Frequency: 195},
+    {Hour: 19, Frequency: 210},
+    {Hour: 20, Frequency: 184},
+    {Hour: 21, Frequency: 162},
+    {Hour: 22, Frequency: 166},
+    {Hour: 23, Frequency: 107}
+  ];
+  var order = data.map(function(d){ return d.hour; });
+
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .data(data)
+    .type("bar")
+    .id("Hour")
+    .x("Hour")
+    .y("Frequency")
+    .title("When do I Recieve Emails?: Email Sent Times Measured by the Hour")
+    .draw()
+</script>
