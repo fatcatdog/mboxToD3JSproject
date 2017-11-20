@@ -1,0 +1,79 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+  var data = [
+    	{"Company_Email_Address": "@hackreactor.com", "Amount_of_times_emailed":  10},
+    	{"Company_Email_Address": "@generalassemb.ly", "Amount_of_times_emailed":  10},
+    	{"Company_Email_Address": "@klaviyo.com", "Amount_of_times_emailed":  11},
+    	{"Company_Email_Address": "@jobplex.com", "Amount_of_times_emailed":  11},
+    	{"Company_Email_Address": "@youtube.com", "Amount_of_times_emailed":  12},
+    	{"Company_Email_Address": "@smartalerts.info", "Amount_of_times_emailed":  12},
+    	{"Company_Email_Address": "@route.monster.com", "Amount_of_times_emailed":  13},
+    	{"Company_Email_Address": "@mail.cybercoders.com", "Amount_of_times_emailed":  13},
+    	{"Company_Email_Address": "@startwire.com", "Amount_of_times_emailed":  14},
+    	{"Company_Email_Address": "@hq.bill.com", "Amount_of_times_emailed":  14},
+    	{"Company_Email_Address": "@indeedemail.com", "Amount_of_times_emailed":  14},
+    	{"Company_Email_Address": "@jobvite.com", "Amount_of_times_emailed":  14},
+    	{"Company_Email_Address": "@jobem.livecareer.com", "Amount_of_times_emailed":  14},
+    	{"Company_Email_Address": "@accounts.google.com", "Amount_of_times_emailed":  16},
+    	{"Company_Email_Address": "@e.linkedin.com", "Amount_of_times_emailed":  16},
+    	{"Company_Email_Address": "@visaprepaidprocessing.com", "Amount_of_times_emailed":  16},
+    	{"Company_Email_Address": "@slack.com", "Amount_of_times_emailed":  17},
+    	{"Company_Email_Address": "@remail.angel.co", "Amount_of_times_emailed":  17},
+    	{"Company_Email_Address": "@learn.co", "Amount_of_times_emailed":  17},
+    	{"Company_Email_Address": "@InsideApple.Apple.com", "Amount_of_times_emailed":  18},
+    	{"Company_Email_Address": "@freecodecamp.org", "Amount_of_times_emailed":  19},
+    	{"Company_Email_Address": "@mg.starbucks.com", "Amount_of_times_emailed":  19},
+    	{"Company_Email_Address": "@bitbucket.org", "Amount_of_times_emailed":  20},
+    	{"Company_Email_Address": "@intrepid.io", "Amount_of_times_emailed":  20},
+    	{"Company_Email_Address": "@jobright.com", "Amount_of_times_emailed":  20},
+    	{"Company_Email_Address": "@google.com", "Amount_of_times_emailed":  22},
+    	{"Company_Email_Address": "@a.seamless.com", "Amount_of_times_emailed":  22},
+    	{"Company_Email_Address": "@dailyjobsearch.emailnb.com", "Amount_of_times_emailed":  24},
+    	{"Company_Email_Address": "@cybercoders.com", "Amount_of_times_emailed":  24},
+    	{"Company_Email_Address": "@discoursemail.com", "Amount_of_times_emailed":  26},
+    	{"Company_Email_Address": "@e-mail.dice.com", "Amount_of_times_emailed":  26},
+    	{"Company_Email_Address": "@hire.lever.co", "Amount_of_times_emailed":  27},
+    	{"Company_Email_Address": "@github.com", "Amount_of_times_emailed":  28},
+    	{"Company_Email_Address": "@freecodecamp.com", "Amount_of_times_emailed":  29},
+    	{"Company_Email_Address": "@email.shopify.com", "Amount_of_times_emailed":  33},
+    	{"Company_Email_Address": "@codecademy.com", "Amount_of_times_emailed":  36},
+    	{"Company_Email_Address": "@indeed.com", "Amount_of_times_emailed":  39},
+    	{"Company_Email_Address": "@angel.co", "Amount_of_times_emailed":  41},
+    	{"Company_Email_Address": "@themuse.com", "Amount_of_times_emailed":  43},
+    	{"Company_Email_Address": "@piazza.com", "Amount_of_times_emailed":  44},
+    	{"Company_Email_Address": "@leagueapps.com", "Amount_of_times_emailed":  48},
+    	{"Company_Email_Address": "@codepen.io", "Amount_of_times_emailed":  49},
+    	{"Company_Email_Address": "@e.starbucks.com", "Amount_of_times_emailed":  50},
+    	{"Company_Email_Address": "@amazon.com", "Amount_of_times_emailed":  64},
+    	{"Company_Email_Address": "@appacademy.io", "Amount_of_times_emailed":  87},
+    	{"Company_Email_Address": "@ziprecruiter.com", "Amount_of_times_emailed":  94},
+    	{"Company_Email_Address": "@ziprecruiter.com", "Amount_of_times_emailed":  101},
+    	{"Company_Email_Address": "@ziprecruiter.com", "Amount_of_times_emailed":  130},
+    	{"Company_Email_Address": "@twitter.com", "Amount_of_times_emailed":  133},
+    	{"Company_Email_Address": "@linkedin.com", "Amount_of_times_emailed":  216},
+    	{"Company_Email_Address": "@quora.com", "Amount_of_times_emailed":  216},
+    	{"Company_Email_Address": "@meetup.com", "Amount_of_times_emailed":  320},
+    ]
+    // instantiate d3plus
+
+      var visualization = d3plus.viz()
+        .container("#viz")
+        .data(data)
+        .type("bar")
+        .id("Company_Email_Address")
+        .x("Company_Email_Address")
+        .y("Amount_of_times_emailed")
+        .title("Which companies email me the most...")
+        .draw()
+    </script>
